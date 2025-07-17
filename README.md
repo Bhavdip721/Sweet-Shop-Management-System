@@ -3,7 +3,8 @@
 
 This project implements a comprehensive Sweet Shop Management System in Python, designed to help manage inventory, track sales, and provide insights into sweet stock. It includes a core logic for managing `Sweet` objects, a robust set of unit tests following Test-Driven Development (TDD) principles, a Command Line Interface (CLI) for direct interaction, and a Flask-based web application for a user-friendly graphical interface.
 
-![image alt](D:\Delight Manager Web Store)
+![image a<img width="953" height="475" alt="home page" src="https://github.com/user-attachments/assets/d6a43f16-dbe8-4622-af6e-5c170a6da178" />
+lt]
 
 
 ## Features
