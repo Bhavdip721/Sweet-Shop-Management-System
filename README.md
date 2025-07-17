@@ -4,7 +4,7 @@
 This project implements a comprehensive Sweet Shop Management System in Python, designed to help manage inventory, track sales, and provide insights into sweet stock. It includes a core logic for managing `Sweet` objects, a robust set of unit tests following Test-Driven Development (TDD) principles, a Command Line Interface (CLI) for direct interaction, and a Flask-based web application for a user-friendly graphical interface.
 
  --------------------------------------------------------------Home page--------------------------------------------------------------
- <img width="953" height="475" alt="home page" src="https://github.com/user-attachments/assets/ca10fba7-5362-4fa2-ba0c-46ca05e2b07e" />
+ <img width="900" height="400" alt="home page" src="https://github.com/user-attachments/assets/ca10fba7-5362-4fa2-ba0c-46ca05e2b07e" />
 
 --------------------------------------------------------------All sweet page-----------------------------------------------------------
 
@@ -21,13 +21,13 @@ This project implements a comprehensive Sweet Shop Management System in Python, 
 ---------------------------------------------------------------category page-----------------------------------------------------------
 
 
-<img width="650" height="447" alt="category_page" src="https://github.com/user-attachments/assets/a57b3641-4a81-4896-9a88-7851ff7d02d6" />
+<img width="600" height="400" alt="category_page" src="https://github.com/user-attachments/assets/a57b3641-4a81-4896-9a88-7851ff7d02d6" />
 
 
 --------------------------------------------------------------search sweet page--------------------------------------------------------
 
 
-<img width="710" height="185" alt="search_sweet_page" src="https://github.com/user-attachments/assets/bd13ef10-41d5-42e5-91e5-9f3be6a3e934" />
+<img width="600" height="150" alt="search_sweet_page" src="https://github.com/user-attachments/assets/bd13ef10-41d5-42e5-91e5-9f3be6a3e934" />
 
 
 ---------------------------------------------------------------statistics_page---------------------------------------------------------
