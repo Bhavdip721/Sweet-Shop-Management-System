@@ -7,20 +7,32 @@ This project implements a comprehensive Sweet Shop Management System in Python, 
  <img width="953" height="475" alt="home page" src="https://github.com/user-attachments/assets/ca10fba7-5362-4fa2-ba0c-46ca05e2b07e" />
 
 --------------------------------------------------------------All sweet page-----------------------------------------------------------
+
+
 <img width="672" height="446" alt="all_sweet_page" src="https://github.com/user-attachments/assets/915493bd-1385-4921-acdf-609954447265" />
 
+
 ---------------------------------------------------------------Add sweet page----------------------------------------------------------
+
+
 <img width="664" height="358" alt="add_sweet_page" src="https://github.com/user-attachments/assets/d06fb6d8-2dea-464a-bcfe-4ef3b6da7d6d" />
 
+
 ---------------------------------------------------------------category page-----------------------------------------------------------
+
+
 <img width="650" height="447" alt="category_page" src="https://github.com/user-attachments/assets/a57b3641-4a81-4896-9a88-7851ff7d02d6" />
 
+
 --------------------------------------------------------------search sweet page--------------------------------------------------------
+
 
 <img width="710" height="185" alt="search_sweet_page" src="https://github.com/user-attachments/assets/bd13ef10-41d5-42e5-91e5-9f3be6a3e934" />
 
 
 ---------------------------------------------------------------statistics_page---------------------------------------------------------
+
+
 <img width="646" height="439" alt="statistics_page" src="https://github.com/user-attachments/assets/aa6dc6f0-dd14-434f-9b6f-59464262471c" />
 
 
