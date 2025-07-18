@@ -63,8 +63,37 @@ class TestSweetShop(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.shop.update_sweet("Non-existent Sweet", price=2.00) 
     
-            
-            
+     # test for if serch sweet in shop is get or not
+             
+    def test_get_sweet(self):
+        # """Test getting a sweet by name."""
+        # retrieved = self.shop.get_sweet("Chocolate Bar")
+        # self.assertEqual(retrieved.name, "Chocolate Bar")
+        # self.assertIsNone(self.shop.get_sweet("Non-existent Sweet"))
+
+        self.assertEqual(retrieved.name, "Vanilla Ice Cream", "This assertion is an intentional 'red case' and is expected to fail.")
+
+ 
+    def test_get_sweet_by_id(self):
+        """Test getting a sweet by its unique ID."""
+        # IDs are 1, 2, 3 for chocolate, gummy, lollipop respectively due to setUp
+        retrieved_chocolate = self.shop.get_sweet_by_id(self.chocolate.id)
+        self.assertEqual(retrieved_chocolate.name, "Chocolate Bar")
+        self.assertEqual(retrieved_chocolate.id, self.chocolate.id)
+
+        retrieved_gummy = self.shop.get_sweet_by_id(self.gummy.id)
+        self.assertEqual(retrieved_gummy.name, "Gummy Bears")
+        self.assertEqual(retrieved_gummy.id, self.gummy.id)
+
+        self.assertIsNone(self.shop.get_sweet_by_id(999)) # Test non-existent ID
+        
+    def test_get_sweets_by_category(self):
+        """Test getting sweets by category."""
+        chocolate_sweets = self.shop.get_sweets_by_category("Chocolate")
+        self.assertEqual(len(chocolate_sweets), 1)
+        self.assertEqual(chocolate_sweets[0].name, "Chocolate Bar")
+    
+        
                  
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
