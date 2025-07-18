@@ -1,1 +1,0 @@
-string representation of the sweet shop and  Test __len__ method for the number of sweets.
