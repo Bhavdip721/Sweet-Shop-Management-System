@@ -174,6 +174,19 @@ class TestSweetShop(unittest.TestCase):
         categories = self.shop.get_categories()
         # Convert to set for comparison as order might not be guaranteed
         self.assertEqual(set(categories), {"Chocolate", "Gummy", "Hard Candy"})
+     
+     
+     #  Test string representation of the sweet shop and  Test __len__ method for the number of sweets.
+    def test_str_representation(self):
+        
+        expected = "Sweet Dreams - 3 sweets available"
+        self.assertEqual(str(self.shop), expected)
+
+    def test_len(self):
+        
+        self.assertEqual(len(self.shop), 3)
+        self.shop.remove_sweet("Chocolate Bar")
+        self.assertEqual(len(self.shop), 2)    
 
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
