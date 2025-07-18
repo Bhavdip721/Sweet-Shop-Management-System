@@ -119,3 +119,27 @@ class SweetShop:
         """
         return [sweet for sweet in self.sweets.values()
                 if sweet.category.lower() == category.lower()]
+        
+        
+        # search function  for sweet
+        
+    def search_sweets(self, query: str) -> List[Sweet]:
+        """
+        Search for sweets by name, description, or category.
+
+        Args:
+            query (str): Search query
+
+        Returns:
+            List[Sweet]: List of matching sweets
+        """
+        query_lower = query.lower()
+        results = []
+
+        for sweet in self.sweets.values():
+            if (query_lower in sweet.name.lower() or
+                query_lower in sweet.description.lower() or
+                query_lower in sweet.category.lower()):
+                results.append(sweet)
+
+        return results
