@@ -74,6 +74,19 @@ class TestSweet(unittest.TestCase):
         self.assertTrue(self.sweet.is_available())
         self.sweet.update_quantity(0)
         self.assertFalse(self.sweet.is_available()) 
+        
+    # Test converting sweet to dictionary, including ID    
+     def test_to_dict(self):
+        
+        expected = {
+            'id': 1, # Expecting ID 1 due to setUp resetting _next_id
+            'name': 'Chocolate Bar',
+            'description': 'Dark chocolate',
+            'price': 2.50,
+            'quantity': 100,
+            'category': 'Chocolate'
+        }
+        self.assertEqual(self.sweet.to_dict(), expected)   
       
 if __name__ == '__main__':
   

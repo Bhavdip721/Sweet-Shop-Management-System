@@ -86,3 +86,6 @@ class Sweet:
             bool: True if available, False otherwise
         """
         return self.quantity > 0
+        
+        
+       
