@@ -62,6 +62,7 @@ class TestSweetShop(unittest.TestCase):
         """Test that updating a non-existent sweet raises ValueError."""
         with self.assertRaises(ValueError):
             self.shop.update_sweet("Non-existent Sweet", price=2.00) 
+    
             
             
                  

@@ -28,3 +28,61 @@ class SweetShop:
         if sweet.name in self.sweets:
             raise ValueError(f"Sweet '{sweet.name}' already exists in the shop")
         self.sweets[sweet.name] = sweet
+
+
+   #perform upadte and remove in eists and non exist sweet in shop
+   
+    def remove_sweet(self, name: str) -> Sweet:
+        """
+        Remove a sweet from the shop.
+
+        Args:
+            name (str): Name of the sweet to remove
+
+        Returns:
+            Sweet: The removed sweet object
+
+        Raises:
+            ValueError: If sweet doesn't exist
+        """
+        if name not in self.sweets:
+            raise ValueError(f"Sweet '{name}' not found in the shop")
+        return self.sweets.pop(name)
+
+    def update_sweet(self, name: str, **kwargs):
+        """
+        Update a sweet's details.
+
+        Args:
+            name (str): Name of the sweet to update
+            **kwargs: Attributes to update (price, quantity, description, category)
+
+        Raises:
+            ValueError: If sweet doesn't exist
+        """
+        if name not in self.sweets:
+            raise ValueError(f"Sweet '{name}' not found in the shop")
+
+        sweet = self.sweets[name]
+
+        if 'price' in kwargs:
+            sweet.update_price(kwargs['price'])
+        if 'quantity' in kwargs:
+            sweet.update_quantity(kwargs['quantity'])
+        if 'description' in kwargs:
+            sweet.description = kwargs['description']
+        if 'category' in kwargs:
+            sweet.category = kwargs['category']
+            
+    
+    def get_sweet(self, name: str) -> Optional[Sweet]:
+        """
+        Get a sweet by name.
+
+        Args:
+            name (str): Name of the sweet
+
+        Returns:
+            Sweet or None: Sweet object if found, None otherwise
+        """
+        return self.sweets.get(name)        
