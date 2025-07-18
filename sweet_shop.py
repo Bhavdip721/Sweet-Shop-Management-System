@@ -143,3 +143,54 @@ class SweetShop:
                 results.append(sweet)
 
         return results
+    
+    
+    # function for sort sweet by name,id ,price,quantity
+    
+    def sort_sweets_by_id(self, reverse: bool = False) -> List[Sweet]:
+        """
+        Get sweets sorted by their ID.
+        Args:
+            reverse (bool): If True, sort in descending order. Defaults to False (ascending).
+        Returns:
+            List[Sweet]: Sorted list of sweets.
+        """
+        return sorted(self.sweets.values(), key=lambda x: x.id, reverse=reverse)
+
+           
+
+    def sort_sweets_by_price(self, reverse: bool = False) -> List[Sweet]:
+        """
+        Get sweets sorted by price.
+
+        Args:
+            reverse (bool): If True, sort in descending order
+
+        Returns:
+            List[Sweet]: Sorted list of sweets
+        """
+        return sorted(self.sweets.values(), key=lambda x: x.price, reverse=reverse)
+
+    def sort_sweets_by_name(self, reverse: bool = False) -> List[Sweet]:
+        """
+        Get sweets sorted by name.
+
+        Args:
+            reverse (bool): If True, sort in descending order
+
+        Returns:
+            List[Sweet]: Sorted list of sweets
+        """
+        return sorted(self.sweets.values(), key=lambda x: x.name.lower(), reverse=reverse)
+
+    def sort_sweets_by_quantity(self, reverse: bool = False) -> List[Sweet]:
+        """
+        Get sweets sorted by quantity.
+
+        Args:
+            reverse (bool): If True, sort in descending order
+
+        Returns:
+            List[Sweet]: Sorted list of sweets
+        """
+        return sorted(self.sweets.values(), key=lambda x: x.quantity, reverse=reverse)
