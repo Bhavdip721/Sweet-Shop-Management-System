@@ -1,1 +1,0 @@
- self.shop.add_sweet(self.chocolate)

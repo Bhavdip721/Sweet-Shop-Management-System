@@ -74,6 +74,8 @@ class SweetShop:
         if 'category' in kwargs:
             sweet.category = kwargs['category']
             
+    # function for get sweet by id,name,categroy
+    
     
     def get_sweet(self, name: str) -> Optional[Sweet]:
         """
@@ -85,4 +87,35 @@ class SweetShop:
         Returns:
             Sweet or None: Sweet object if found, None otherwise
         """
-        return self.sweets.get(name)        
+        return self.sweets.get(name)  
+    
+    
+    
+    def get_sweet_by_id(self, sweet_id: int) -> Optional[Sweet]:
+        """
+        Get a sweet by its unique ID.
+
+        Args:
+            sweet_id (int): The unique ID of the sweet.
+
+        Returns:
+            Sweet or None: Sweet object if found, None otherwise.
+        """
+        for sweet in self.sweets.values():
+            if sweet.id == sweet_id:
+                return sweet
+        return None  
+        
+        
+    def get_sweets_by_category(self, category: str) -> List[Sweet]:
+        """
+        Get all sweets in a specific category.
+
+        Args:
+            category (str): Category to filter by
+
+        Returns:
+            List[Sweet]: List of sweets in the category
+        """
+        return [sweet for sweet in self.sweets.values()
+                if sweet.category.lower() == category.lower()]

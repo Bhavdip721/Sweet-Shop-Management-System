@@ -66,12 +66,12 @@ class TestSweetShop(unittest.TestCase):
      # test for if serch sweet in shop is get or not
              
     def test_get_sweet(self):
-        # """Test getting a sweet by name."""
-        # retrieved = self.shop.get_sweet("Chocolate Bar")
-        # self.assertEqual(retrieved.name, "Chocolate Bar")
-        # self.assertIsNone(self.shop.get_sweet("Non-existent Sweet"))
+        """Test getting a sweet by name."""
+        retrieved = self.shop.get_sweet("Chocolate Bar")
+        self.assertEqual(retrieved.name, "Chocolate Bar")
+        self.assertIsNone(self.shop.get_sweet("Non-existent Sweet"))
 
-        self.assertEqual(retrieved.name, "Vanilla Ice Cream", "This assertion is an intentional 'red case' and is expected to fail.")
+        # self.assertEqual(retrieved.name, "Vanilla Ice Cream", "This assertion is an intentional 'red case' and is expected to fail.")
 
  
     def test_get_sweet_by_id(self):
