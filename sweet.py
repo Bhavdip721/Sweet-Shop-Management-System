@@ -86,6 +86,23 @@ class Sweet:
             bool: True if available, False otherwise
         """
         return self.quantity > 0
-        
+    
+    
+    #  Convert sweet to dictionary representation.
+    def to_dict(self):
+        """
+        Convert sweet to dictionary representation.
+
+        Returns:
+            dict: Dictionary representation of the sweet
+        """
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'price': self.price,
+            'quantity': self.quantity,
+            'category': self.category
+        }    
         
        
