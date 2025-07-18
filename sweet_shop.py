@@ -252,3 +252,13 @@ class SweetShop:
         """
         return list(set(sweet.category for sweet in self.sweets.values()))
     
+    
+    
+    #function string representation of the sweet shop and  Test __len__ method for the number of sweets.
+    def __str__(self):
+        """String representation of the sweet shop."""
+        return f"{self.name} - {len(self.sweets)} sweets available"
+
+    def __len__(self):
+        """Return number of sweets in the shop."""
+        return len(self.sweets)
