@@ -32,3 +32,46 @@ class Sweet:
         self.price = price
         self.quantity = quantity
         self.category = category
+        
+        # function for update or reduce of price and quantity vaild
+    def update_price(self, new_price):
+        """
+        Update the price of the sweet.
+
+        Args:
+            new_price (float): New price for the sweet
+
+        Raises:
+            ValueError: If new_price is negative
+        """
+        if new_price < 0:
+            raise ValueError("Price cannot be negative")
+        self.price = new_price
+
+    def update_quantity(self, new_quantity):
+        """
+        Update the quantity of the sweet.
+
+        Args:
+            new_quantity (int): New quantity for the sweet
+
+        Raises:
+            ValueError: If new_quantity is negative
+        """
+        if new_quantity < 0:
+            raise ValueError("Quantity cannot be negative")
+        self.quantity = new_quantity
+
+    def reduce_quantity(self, amount):
+        """
+        Reduce the quantity of the sweet.
+
+        Args:
+            amount (int): Amount to reduce
+
+        Raises:
+            ValueError: If amount exceeds available quantity
+        """
+        if amount > self.quantity:
+            raise ValueError("Cannot reduce quantity beyond available stock")
+        self.quantity -= amount
