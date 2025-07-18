@@ -142,6 +142,25 @@ class TestSweetShop(unittest.TestCase):
         # lollipop:  $1.00 * 75  = 75
         total_value = self.shop.get_total_value()
         self.assertEqual(total_value, 250.00 + 75.00 + 75.00) # 400.00
+        
+        
+     # test for low stock
+    def test_get_low_stock_sweets(self):
+        """Test getting sweets with low stock."""
+        low_stock_sweet = Sweet("Low Stock", "Almost gone", 1.00, 5, "Test")
+        self.shop.add_sweet(low_stock_sweet) # ID 4
+        
+        low_stock = self.shop.get_low_stock_sweets(threshold=10)
+        self.assertEqual(len(low_stock), 1)
+        self.assertEqual(low_stock[0].name, "Low Stock")
+
+        # Test with a threshold that includes more items
+        low_stock_higher_threshold = self.shop.get_low_stock_sweets(threshold=60)
+        self.assertEqual(len(low_stock_higher_threshold), 2) # Gummy (50) and Low Stock (5)
+        self.assertIn(self.gummy, low_stock_higher_threshold)
+        self.assertIn(low_stock_sweet, low_stock_higher_threshold)
+
+   
                  
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
