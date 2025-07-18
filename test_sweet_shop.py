@@ -133,6 +133,15 @@ class TestSweetShop(unittest.TestCase):
         self.assertNotIn(self.chocolate, available)
         self.assertIn(self.gummy, available)
         self.assertIn(self.lollipop, available)
+        
+        # test for total value 
+    def test_get_total_value(self):
+        """Test calculating total inventory value."""
+        # chocolate: $2.50 * 100 = 250
+        # gummy:     $1.50 * 50  = 75
+        # lollipop:  $1.00 * 75  = 75
+        total_value = self.shop.get_total_value()
+        self.assertEqual(total_value, 250.00 + 75.00 + 75.00) # 400.00
                  
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
