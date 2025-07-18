@@ -93,7 +93,19 @@ class TestSweetShop(unittest.TestCase):
         self.assertEqual(len(chocolate_sweets), 1)
         self.assertEqual(chocolate_sweets[0].name, "Chocolate Bar")
     
-        
+      # serch sweet by name and category
+      
+    def test_search_sweets_by_name(self):
+        """Test searching sweets by name."""
+        results = self.shop.search_sweets("Chocolate")
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].name, "Chocolate Bar")
+
+    def test_search_sweets_by_category(self):
+        """Test searching sweets by category."""
+        results = self.shop.search_sweets("Gummy")
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].category, "Gummy")  
                  
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
