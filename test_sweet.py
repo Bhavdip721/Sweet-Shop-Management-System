@@ -1,8 +1,16 @@
 import unittest
-
+from sweet import Sweet
 
 
 class TestSweet(unittest.TestCase):
+    
+    # function for set data 
+     def setUp(self):
+        """Set up test fixtures before each test method."""
+        # Reset the ID counter for consistent testing across runs
+        Sweet._next_id = 1
+        self.sweet = Sweet("Chocolate Bar", "Dark chocolate", 2.50, 100, "Chocolate")
+        self.sweet2 = Sweet("Gummy Bears", "Fruity gummy candy", 1.50, 50, "Gummy")
     
     # test for creation sweet data
     
