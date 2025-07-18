@@ -34,7 +34,37 @@ class TestSweet(unittest.TestCase):
         with self.assertRaises(ValueError):
             Sweet("Invalid Sweet", "Description", 2.0, -5, "Category")
 
+    # test for update or reduce of price or quantity
+    
+     def test_update_price(self):
+        """Test updating sweet price."""
+        self.sweet.update_price(3.00)
+        self.assertEqual(self.sweet.price, 3.00)
 
+     def test_update_price_invalid(self):
+        """Test that updating with invalid price raises ValueError."""
+        with self.assertRaises(ValueError):
+            self.sweet.update_price(-1.0)
+
+     def test_update_quantity(self):
+        """Test updating sweet quantity."""
+        self.sweet.update_quantity(150)
+        self.assertEqual(self.sweet.quantity, 150)
+        
+     def test_update_quantity_invalid(self):
+        """Test that updating with invalid quantity raises ValueError."""
+        with self.assertRaises(ValueError):
+            self.sweet.update_quantity(-10)
+
+     def test_reduce_quantity(self):
+        """Test reducing sweet quantity."""
+        self.sweet.reduce_quantity(20)
+        self.assertEqual(self.sweet.quantity, 80)
+
+     def test_reduce_quantity_insufficient(self):
+        """Test that reducing quantity beyond available raises ValueError."""
+        with self.assertRaises(ValueError):
+            self.sweet.reduce_quantity(150)
 
 
 if __name__ == '__main__':
