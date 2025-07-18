@@ -105,4 +105,12 @@ class Sweet:
             'category': self.category
         }    
         
-       
+        
+   # function string rerepresentation and  detailed string representation of sweet including id     
+    def __str__(self):
+        """String representation of the sweet."""
+        return f"ID: {self.id}, {self.name} - ₹{self.price:.2f} ({self.quantity} available) - {self.description}"
+
+    def __repr__(self):
+        """Detailed string representation of the sweet."""
+        return f"Sweet(id={self.id}, name='{self.name}', description='{self.description}', price={self.price}, quantity={self.quantity}, category='{self.category}')"   

@@ -101,7 +101,7 @@ class TestSweet(unittest.TestCase):
         }
       
       
-      # test string rerepresentation and  detailed string representation of sweet including id 
+      # test string representation and  detailed string representation of sweet including id 
      def test_str_representation(self):
         """Test string representation of sweet, including ID."""
         expected = "ID: 1, Chocolate Bar - ₹2.50 (100 available) - Dark chocolate"
