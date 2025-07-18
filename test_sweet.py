@@ -66,7 +66,15 @@ class TestSweet(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.sweet.reduce_quantity(150)
 
-
+      
+     # test for cheking of sweet available
+     
+     def test_is_available(self):
+        """Test checking if sweet is available."""
+        self.assertTrue(self.sweet.is_available())
+        self.sweet.update_quantity(0)
+        self.assertFalse(self.sweet.is_available()) 
+      
 if __name__ == '__main__':
   
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
