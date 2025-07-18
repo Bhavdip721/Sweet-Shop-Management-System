@@ -99,6 +99,18 @@ class TestSweet(unittest.TestCase):
             'quantity': 100,
             'category': 'Chocolate'
         }
+      
+      
+      # test string rerepresentation and  detailed string representation of sweet including id 
+     def test_str_representation(self):
+        """Test string representation of sweet, including ID."""
+        expected = "ID: 1, Chocolate Bar - ₹2.50 (100 available) - Dark chocolate"
+        self.assertEqual(str(self.sweet), expected)
+
+     def test_repr_representation(self):
+        """Test detailed string representation of sweet, including ID."""
+        expected = "Sweet(id=1, name='Chocolate Bar', description='Dark chocolate', price=2.5, quantity=100, category='Chocolate')"
+        self.assertEqual(repr(self.sweet), expected)    
          
 if __name__ == '__main__':
   
