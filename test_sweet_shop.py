@@ -121,6 +121,18 @@ class TestSweetShop(unittest.TestCase):
         sorted_sweets = self.shop.sort_sweets_by_name()
         names = [sweet.name for sweet in sorted_sweets]
         self.assertEqual(names, ["Chocolate Bar", "Gummy Bears", "Rainbow Lollipop"])
+        
+        
+    # test for avaliable sweet 
+    
+    def test_get_available_sweets(self):
+        """Test getting only available sweets."""
+        self.chocolate.update_quantity(0)  # Make unavailable
+        available = self.shop.get_available_sweets()
+        self.assertEqual(len(available), 2) # Gummy and Lollipop should be available
+        self.assertNotIn(self.chocolate, available)
+        self.assertIn(self.gummy, available)
+        self.assertIn(self.lollipop, available)
                  
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
