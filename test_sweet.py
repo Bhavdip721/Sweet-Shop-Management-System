@@ -87,7 +87,19 @@ class TestSweet(unittest.TestCase):
             'category': 'Chocolate'
         }
         self.assertEqual(self.sweet.to_dict(), expected)   
+    
+    # test for Test retrieving sweet details using get_details method.
+     def test_get_details(self):
       
+        expected = {
+            'id': 1, # Expecting ID 1 due to setUp resetting _next_id
+            'name': 'Chocolate Bar',
+            'description': 'Dark chocolate',
+            'price': 2.50,
+            'quantity': 100,
+            'category': 'Chocolate'
+        }
+         
 if __name__ == '__main__':
   
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
