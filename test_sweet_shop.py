@@ -160,7 +160,20 @@ class TestSweetShop(unittest.TestCase):
         self.assertIn(self.gummy, low_stock_higher_threshold)
         self.assertIn(low_stock_sweet, low_stock_higher_threshold)
 
-   
-                 
+# test for all sweet and catogort wise all sweet 
+    def test_get_all_sweets(self):
+        """Test getting all sweets in the shop."""
+        all_sweets = self.shop.get_all_sweets()
+        self.assertEqual(len(all_sweets), 3)
+        self.assertIn(self.chocolate, all_sweets)
+        self.assertIn(self.gummy, all_sweets)
+        self.assertIn(self.lollipop, all_sweets)
+
+    def test_get_categories(self):
+        """Test getting all unique categories."""
+        categories = self.shop.get_categories()
+        # Convert to set for comparison as order might not be guaranteed
+        self.assertEqual(set(categories), {"Chocolate", "Gummy", "Hard Candy"})
+
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
