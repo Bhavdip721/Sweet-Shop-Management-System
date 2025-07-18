@@ -217,3 +217,17 @@ class SweetShop:
         """
         return sum(sweet.price * sweet.quantity for sweet in self.sweets.values())
     
+    #function of low stock
+    
+    def get_low_stock_sweets(self, threshold: int = 10) -> List[Sweet]:
+        """
+        Get sweets with low stock.
+
+        Args:
+            threshold (int): Stock threshold
+
+        Returns:
+            List[Sweet]: List of sweets with low stock
+        """
+        return [sweet for sweet in self.sweets.values() if sweet.quantity <= threshold]
+    
