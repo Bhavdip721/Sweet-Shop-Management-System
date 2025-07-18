@@ -205,3 +205,15 @@ class SweetShop:
             List[Sweet]: List of available sweets
         """
         return [sweet for sweet in self.sweets.values() if sweet.is_available()]
+    
+    
+    # function for total value of sweet  in shop
+    def get_total_value(self) -> float:
+        """
+        Calculate total inventory value.
+
+        Returns:
+            float: Total value of all sweets in inventory
+        """
+        return sum(sweet.price * sweet.quantity for sweet in self.sweets.values())
+    
