@@ -106,6 +106,21 @@ class TestSweetShop(unittest.TestCase):
         results = self.shop.search_sweets("Gummy")
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0].category, "Gummy")  
+        
+        
+        # test for sort by name,price 
+        
+    def test_sort_sweets_by_price(self):
+        """Test sorting sweets by price."""
+        sorted_sweets = self.shop.sort_sweets_by_price()
+        prices = [sweet.price for sweet in sorted_sweets]
+        self.assertEqual(prices, [1.00, 1.50, 2.50]) # Lollipop, Gummy, Chocolate
+
+    def test_sort_sweets_by_name(self):
+        """Test sorting sweets by name."""
+        sorted_sweets = self.shop.sort_sweets_by_name()
+        names = [sweet.name for sweet in sorted_sweets]
+        self.assertEqual(names, ["Chocolate Bar", "Gummy Bears", "Rainbow Lollipop"])
                  
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)            
