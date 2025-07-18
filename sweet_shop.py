@@ -231,3 +231,24 @@ class SweetShop:
         """
         return [sweet for sweet in self.sweets.values() if sweet.quantity <= threshold]
     
+    
+    # function for all sweet and by category
+    
+    def get_all_sweets(self) -> List[Sweet]:
+        """
+        Get all sweets in the shop.
+
+        Returns:
+            List[Sweet]: List of all sweets
+        """
+        return list(self.sweets.values())
+
+    def get_categories(self) -> List[str]:
+        """
+        Get all unique categories.
+
+        Returns:
+            List[str]: List of unique categories
+        """
+        return list(set(sweet.category for sweet in self.sweets.values()))
+    
