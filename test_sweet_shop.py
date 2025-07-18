@@ -15,15 +15,27 @@ class TestSweetShop(unittest.TestCase):
         self.gummy = Sweet("Gummy Bears", "Fruity gummy bears", 1.50, 50, "Gummy")
         self.lollipop = Sweet("Rainbow Lollipop", "Colorful lollipop", 1.00, 75, "Hard Candy")
         self.shop.add_sweet(self.chocolate)
-        self.shop.add_sweet(self.gummy)
-        self.shop.add_sweet(self.lollipop)
+        # self.shop.add_sweet(self.gummy)
+        # self.shop.add_sweet(self.lollipop)
         
         
       #Test that a sweet shop can be created.
     def test_shop_creation(self):
         
         self.assertEqual(self.shop.name, "Sweet Dreams")
-        self.assertEqual(len(self.shop.sweets), 3) # Now 3 sweets are added in setUp
+        self.assertEqual(len(self.shop.sweets), 1) 
+
+    def test_add_sweet(self):
+        """Test adding a sweet to the shop."""
+        new_sweet = Sweet("Jelly Beans", "Assorted flavors", 3.00, 70, "Jelly")
+        self.shop.add_sweet(new_sweet)
+        self.assertEqual(len(self.shop.sweets), 4)
+        self.assertIn("Jelly Beans", self.shop.sweets)
+
+    def test_add_duplicate_sweet(self):
+        """Test that adding a duplicate sweet raises ValueError."""
+        with self.assertRaises(ValueError):
+            self.shop.add_sweet(Sweet("Chocolate Bar", "Another chocolate", 2.00, 10, "Chocolate"))
 
 
 
