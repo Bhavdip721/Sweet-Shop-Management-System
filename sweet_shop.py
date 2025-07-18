@@ -195,4 +195,13 @@ class SweetShop:
         """
         return sorted(self.sweets.values(), key=lambda x: x.quantity, reverse=reverse)
     
-  
+    
+    # function for available sweet in shop
+    def get_available_sweets(self) -> List[Sweet]:
+        """
+        Get all available sweets (quantity > 0).
+
+        Returns:
+            List[Sweet]: List of available sweets
+        """
+        return [sweet for sweet in self.sweets.values() if sweet.is_available()]
