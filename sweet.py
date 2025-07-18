@@ -75,3 +75,14 @@ class Sweet:
         if amount > self.quantity:
             raise ValueError("Cannot reduce quantity beyond available stock")
         self.quantity -= amount
+        
+        
+        # function for cheaking sweet available 
+    def is_available(self):
+        """
+        Check if the sweet is available (quantity > 0).
+
+        Returns:
+            bool: True if available, False otherwise
+        """
+        return self.quantity > 0
